@@ -1,0 +1,22 @@
+dataset:
+  numSubj:    38  # number of subjects
+  numPerSubj: 64  # images per subjects
+  dataPath:   "./Data/YaleBCrop025.mat" #dataset
+
+model:
+  kernelSize: [5, 3, 3]
+  numHidden:  [10, 20, 30]
+  input_size: [42, 48]
+  preTrainedModel: "./PreTrained-EYaleB.pt" # pre-trained model on 38 subjects
+
+training:
+  seedFlag:   True
+  seedValue:  1
+  lambda:     .1
+  gamma:      1
+  lr:         1.0e-3 # learning rate
+  cte:        1.0e-4 # convergence criteria
+  numEpochs:  5000   # number of epochs
+  T:          1000
+  post_proc:  [11, 3]
+  rankE:      10

@@ -1,0 +1,23 @@
+dataset:
+  numSubj:    100  # number of subjects
+  numPerSubj: 72   # images per subjects
+  dataPath:   "./Data/COIL100.mat" # dataset
+
+model:
+  kernelSize: [3]
+  numHidden:  [50]
+  input_size: [32, 32]
+  preTrainedModel: "./PreTrained-COIL100.pt" # pre-trained model
+
+training:
+  seedFlag:   True
+  seedValue:  1
+  lambda:     2.
+  gamma:      2.
+  lr:         1.0e-3 # learning rate
+  cte:        1.0e-4 # convergence criteria
+  numEpochs:  5000   # number of epochs
+  T:          1000
+  post_proc:  [12, 8]
+  rankE:      10
+
